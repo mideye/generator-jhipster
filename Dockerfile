@@ -21,6 +21,8 @@ RUN \
     python \
     g++ \
     build-essential \
+  # dependencies required by pngquant
+    libpng-dev \
   # dependencies required by puppeteer
     gconf-service \
     libasound2 \
@@ -67,6 +69,8 @@ RUN \
   # install yarn
   npm install -g yarn && \
   su -c "yarn config set prefix /home/jhipster/.yarn-global" jhipster && \
+  # install pngqaunt
+  npm install -g pngquant-bin \ 
   # install yeoman
   su -c "yarn global add yo" jhipster && \
   # cleanup
